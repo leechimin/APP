@@ -22,9 +22,9 @@ requirejs.config({
 // 引入其他模块
 // 在requireJS中，一个模块就是一个js文件
 // 引入模块的路径：
-requirejs(['jquery','home'],function($,home){
-    home.getdata();
+requirejs(['jquery','top','home'],function($,top,home){
+    top.getData();
+    home.getData();
 	//$('#box');
-
 	//console.log(gdszoom)
 });

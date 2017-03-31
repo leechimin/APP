@@ -1,0 +1,234 @@
+.carousel {
+  width: 1067px;
+  height: 400px;
+  left: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel ul {
+  position: absolute;
+  right: -20px;
+  height: 400px;
+  width: 800px;
+  padding-right: 250px;
+}
+
+.carousel .next, .carousel .prev {
+  display: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background: url(../img/btn.gif) no-repeat;
+  color: #fff;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.carousel .next {
+  right: -5px;
+  top: 50%;
+  margin-top: -25px;
+  background-position: 0 -60px;
+}
+
+.carousel .prev {
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.carousel:hover .next {
+  display: block;
+}
+
+.carousel:hover .prev {
+  display: block;
+}
+
+.carousel .page {
+  position: absolute;
+  right: 500px;
+  bottom: 15px;
+}
+
+.carousel .page span {
+  display: inline-block;
+  margin: 0 5px;
+  width: 8px;
+  height: 8px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #efefef;
+  border-radius: 50%;
+  text-indent: -2000em;
+}
+
+.carousel .page span.active {
+  background-color: blue;
+  color: #fff;
+}
+
+.pic {
+  width: 100%;
+  height: 210px;
+}
+
+.pic .box {
+  padding-top: 20px;
+  padding-left: 220px;
+}
+
+#LoutiNav {
+  width: 80px;
+  position: fixed;
+  top: 150px;
+  right: 10px;
+  border: 1px solid #ddd;
+  display: block;
+}
+
+#LoutiNav li {
+  width: 80px;
+  height: 32px;
+  border-bottom: 1px dotted #DDDDDD;
+  list-style: none;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  line-height: 32px;
+  position: relative;
+  cursor: pointer;
+}
+
+#LoutiNav li span {
+  width: 80px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#LoutiNav li span.active {
+  background: #fff;
+  color: #c00;
+  display: block;
+}
+
+.floor {
+  width: 100%;
+  left: 20px;
+  background: #fff;
+}
+
+.floor div {
+  width: 100%;
+  height: 720px;
+}
+
+.floor div h3 {
+  text-align: center;
+}
+
+.floor .louti1 ul li {
+  float: left;
+  width: 200px;
+  height: 259px;
+}
+
+.floor .louti1 ul li img {
+  padding-left: 15px;
+}
+
+.floor .louti1 ul li span {
+  display: block;
+  padding-left: 10px;
+}
+
+.floor .louti1 ul li span a {
+  color: #666;
+  font-size: 12px;
+}
+
+.floor .louti1 .movepic {
+  width: 178px;
+  height: 88px;
+  float: right;
+  border: 1px solid #ccc;
+  margin-right: 50px;
+  position: relative;
+}
+
+.floor .louti1 .movepic img {
+  position: absolute;
+  left: 0;
+}
+
+.floor .louti2 {
+  position: relative;
+}
+
+.floor .louti2 span {
+  display: block;
+  text-align: center;
+}
+
+.floor .louti2 ul {
+  float: left;
+}
+
+.floor .louti2 .ul-2 {
+  padding-left: 40px;
+  width: 220px;
+  height: 408px;
+}
+
+.floor .louti2 .ul-2 img {
+  padding-top: 12px;
+}
+
+.floor .louti2 .ul-3 {
+  position: absolute;
+  left: 0;
+  bottom: 120px;
+  float: none;
+}
+
+.floor .louti2 .ul-3 li {
+  float: left;
+  width: 180px;
+  height: 91px;
+  overflow: hidden;
+  position: relative;
+  padding-right: 20px;
+}
+
+.floor .louti2 .ul-3 li img {
+  position: absolute;
+  border: 1px solid #ccc;
+}
+
+.floor .louti2 .ul-3 li span {
+  color: red;
+  opacity: 1;
+}
+
+.footer {
+  width: 100%;
+  height: 451px;
+}
+
+.footer .footer-1 {
+  background: url("../img/footer.jpg") no-repeat;
+  background-position: 750px 0;
+  width: 100%;
+  height: 185px;
+}
+
+.footer .footer-1 dl {
+  float: left;
+  width: 172px;
+}

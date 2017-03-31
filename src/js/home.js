@@ -1,44 +1,124 @@
 define(['jquery'],function($){
     return {
-        getdata:function(data){
-            //导航
-            $('.list li').has('ul').css({'position':'relative'})
-            $('.list li').has('ul').on('mouseenter',function(){
-                $(this).css({'background':'#f5f5f5'})
-                $(this).children('a').addClass('hover')
-                $(this).children('ul').css({
-                    'position':'absolute'
-                })
-                $(this).children('ul').show();
-            }).on('mouseleave',function(){
-                $(this).css({'background':'#fff'})
-                $(this).children('a').removeClass('hover');
-                $(this).children('ul').hide();
+        getData:function(data){
+            var $carousel = $('.carousel');
+            var $ul = $carousel.children('ul');
+            var len = $ul.children().length;
+            var index=0;
+            //鼠标移入移出
+             $carousel.mouseenter(function(){
+                clearInterval(timer)
             })
-            //全部奢品
-            $('.allgoods').on('mouseenter',function(){
-                $('.content').show()
-            }).on('mouseleave',function(){
-                $('.content').hide()
+            $carousel.mouseleave(function(){
+                timer = setInterval(function(){
+                    index++;
+                    showPic();
+                },3000)
             })
-            var length = $('.content').children().length
-            for(var i=0;i<length;i++){
-                if(i%2==0){
-                   $('.content div').eq(i).css({'background':'blue'})
+            //自动触发事件trigger()
+            //自动触发mouseleave事件
+            $carousel.trigger('mouseleave');
+            //上一张 下一张
+            $('.prev').click(function(){
+                
+                index--;
+                showPic();
+            })
+            $('.next').click(function(){
+                
+                index++;
+                showPic();
+            })
+            //页码
+            $page = $('<div/>');
+            $page.addClass('page')
+            for(var i=0;i<len;i++){
+                $span = $('<span/>')
+                $span.appendTo($page);
+                if(i===index){
+                    $span.eq(i).addClass('active')
                 }
             }
-            $('.content').on('mouseenter','div',function(){
-                // $(this).css({'background':'white','color':'black'})
-                $(this).addClass('hover')
-                $(this).siblings().children('ul').hide();
-                $(this).children('ul').show();
-                $(this).children('ul').on('mouseleave',function(){
-                    $(this).hide()
+            $page.appendTo( $carousel )
+            function showPic(){
+                if(index<0){
+                    index = len - 1;
+                }else if(index > len - 1){
+                    index = 0;
+                }
+                $('.carousel span').eq(index).addClass('active').siblings().removeClass('active')
+                $ul.animate({top:-index*400})
+            }
+            //图片透明度改变
+            $('.pic').on('mouseenter','img',function(){
+                $(this).animate({
+                    'opacity':0.8
+                })
+            }).on('mouseleave','img',function(){
+                $(this).animate({
+                    'opacity':1
                 })
             })
-            $('.content').on('mouseleave','div',function(){
-                $(this).children('ul').hide();
+            //楼梯
+            $(window).scroll(function(){    
+                var _scrllTop = $(document).scrollTop();
+                //console.log(_scrllTop);
+                //吸顶菜单
+                if(_scrllTop>600){
+                    $('#LoutiNav').css('display','block');
+                }else{
+                    $('#LoutiNav').css('display','none')
+                }
+                $(".floor div").each(function(){
+                        
+                        var _top = $(this).offset().top;
+                        //console.log(_top)
+                        if ( _scrllTop >= _top-100 ) {
+                            //console.log(_top);
+                            
+                            var index = $(this).index();
+                            $("#LoutiNav li").eq(index).find("span").removeClass().addClass("active").parent().siblings("li").find("span").removeClass("active"); 
+                        }
+                })                   
             })
+            $('#LoutiNav li').click(function(){
+                $(this).find("span").removeClass().addClass("active").parent().siblings().find("span").removeClass("active");
+                //console.log($(this).index())
+                var idx = $(this).index();
+                //console.log(idx)              
+                if(idx ==8){
+                    $("html, body").stop().animate({scrollTop: 0}, 200);
+                }else{
+                    var top = $('.floor div').eq(idx).offset().top;
+                    //动画效果
+                    $("html, body").stop().animate({scrollTop: top}, 200);
+                }               
+            })
+            //
+            $('.floor div').on('mouseenter','img',function(){
+                $(this).animate({'opacity':0.8})
+            }).on('mouseleave','img',function(){
+                $(this).animate({'opacity':1})
+            })
+            $('.movepic').on('mouseenter',function(){
+                $(this).children('a').children('img').animate({'left':'30px'});
+            }).on('mouseleave',function(){
+                $(this).children('a').children('img').animate({'left':'0'});
+            })
+            //第二层
+            //倒计时
+            var endDate = new Date('2017/5/1 00:00:00');
+            myCountDown();
+            var timer1 = setInterval(myCountDown,1000);
+            function myCountDown(){
+                var now = new Date();
+                var offset = Math.floor((endDate.getTime() - now.getTime())/1000);
+                var secLeft = offset%60;
+                var minLeft = parseInt(offset/60)%60;
+                var hourLeft = parseInt(offset/60/60)%24
+                var dayLeft = parseInt(offset/60/60/24)
+                $('.louti2').children('span').html('剩余时间:'+dayLeft+'天'+hourLeft+'小时'+minLeft+'分'+secLeft+'秒')
+            }
         }
     }
 })

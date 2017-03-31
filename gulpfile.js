@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('compileSass',function(){
-    gulp.src('./src/sass/head.scss')
+    gulp.src('./src/sass/*.scss')
     .pipe(sass({
         outputStyle:'expanded'
     }))
