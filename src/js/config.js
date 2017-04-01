@@ -1,30 +1,16 @@
 // 配置文件
 requirejs.config({
-	baseUrl:'js',
+	//baseUrl:'js',
 
 	// 设置别名
 	// 格式：别名:真实路径
 	paths:{
-		'jquery':'../assets/jquery-3.1.1'
+		'jquery':'../assets/jquery-3.1.1',
+		'gdszoom':'../assets/jquery.gdszoom/jquery.gdszoom'
 	},
 
 	shim:{
-		// 'ajax':{
-		// 	exports:'ajax'
-		// },
-		// 'jQuery.prototype.gdszoom':{
-		// 	deps: ["jquery"],
-		// 	exports:'jQuery.prototype.gdszoom'
-		// }
+		'gdszoom':['jquery']
 	}
 });
 
-// 引入其他模块
-// 在requireJS中，一个模块就是一个js文件
-// 引入模块的路径：
-requirejs(['jquery','top','home'],function($,top,home){
-    top.getData();
-    home.getData();
-	//$('#box');
-	//console.log(gdszoom)
-});

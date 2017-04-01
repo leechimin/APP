@@ -1,7 +1,5 @@
-define(['jquery'],function($){
-    return {
-        getData:function(data){
-            //导航
+requirejs(['config'],function(){
+    requirejs(['jquery'],function(){
             $('.list li').has('ul').css({'position':'relative'})
             $('.list li').has('ul').on('mouseenter',function(){
                 $(this).css({'background':'#f5f5f5'})
@@ -39,12 +37,5 @@ define(['jquery'],function($){
             $('.content').on('mouseleave','div',function(){
                 $(this).children('ul').hide();
             })
-        }
-        // get:function(data){
-        //     var $carousel = $('.carousel');
-        //     var $ul = $carousel.children('ul');
-        //     var len = $ul.children().length;
-        //     console.log(len);
-        // }
-    }
+    })
 })

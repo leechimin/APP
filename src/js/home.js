@@ -1,6 +1,5 @@
-define(['jquery'],function($){
-    return {
-        getData:function(data){
+requirejs(['config'],function(){
+    requirejs(['jquery','gdszoom'],function(){
             var $carousel = $('.carousel');
             var $ul = $carousel.children('ul');
             var len = $ul.children().length;
@@ -13,7 +12,7 @@ define(['jquery'],function($){
                 timer = setInterval(function(){
                     index++;
                     showPic();
-                },3000)
+                },2000)
             })
             //自动触发事件trigger()
             //自动触发mouseleave事件
@@ -119,6 +118,27 @@ define(['jquery'],function($){
                 var dayLeft = parseInt(offset/60/60/24)
                 $('.louti2').children('span').html('剩余时间:'+dayLeft+'天'+hourLeft+'小时'+minLeft+'分'+secLeft+'秒')
             }
-        }
-    }
+            //猜你喜欢
+            var $gd = $('.like .gd');
+            var l = $gd.children('li').length;
+            var i =1;
+            $gd.on('mouseenter',function(){
+                clearInterval(timer2)
+            })
+            $gd.on('mouseleave',function(){
+                timer2=setInterval(function(){
+                    i++;
+                    gdpic();
+                },1000)
+            })
+            $gd.trigger('mouseleave');
+            function gdpic(){
+                if(i<0){
+                    i = l - 1;
+                }else if(i> l - 1){
+                    i = 0;
+                }
+                $gd.animate({left:-i*215})
+            }
+    })        
 })
