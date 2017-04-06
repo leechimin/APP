@@ -44,7 +44,7 @@
 
 				var imgUrl = $smallImg.data('big') || $smallImg.attr('src');
 				$bigImg = $('<img/>').attr('src',imgUrl);
-
+                $bigImg.css({'width':'800px','height':'800px'})
 				// 大图写入页面
 				$bigContainer.append($bigImg).appendTo('body');
 

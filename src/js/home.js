@@ -1,6 +1,10 @@
 requirejs(['config'],function(){
     requirejs(['jquery','gdszoom'],function(){
-            
+            // <?php
+            // session_start();
+            // ?>
+            // var session = <?php echo $_SESSION['user']; ?>
+            // console.log(session)
             var $carousel = $('.carousel');
             var $ul = $carousel.children('ul');
             var len = $ul.children().length;

@@ -45,3 +45,5 @@
   height: 1800px;
   background: #ccc;
 }
+
+.goods ul li {float:left;padding:0 30px;text-align:center}

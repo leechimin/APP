@@ -21,10 +21,12 @@
                 //创建cookie
                 setcookie("wang", $username, time()+7*24*3600);
             }
+            setcookie('username',$username,time()+(60*60*24*30));
             //开启session
             session_start();
             //创建session
             $_SESSION['user']=$username;
+            // setcookie('username',$row['username'],time()+(60*60*24*30));
             //写入日志
             // $ip = $_SERVER['REMOTE_ADDR'];
             // $date = date('Y-m-d H:m:s');
@@ -39,16 +41,18 @@
             // fclose($f);
 
             //跳转到loginsucc.php页面
+            //
+            echo "<script>alert('登录成功！')</script>"; 
             header("Location:../index.html");
             //关闭数据库
             mysqli_close($conn);
         }else {
             //用户名或密码错误，赋值err为1
-            header("Location:../login.html?err=1密码错误");
+            echo "<script>alert('用户名或密码不正确！');history.go(-1);</script>";  
         }
     }else {
         //用户名或密码为空，赋值err为2
-        header("Location:../login.html?err=2");
+        echo "<script>alert('提交未成功！'); history.go(-1);</script>";
     }
 
 ?>

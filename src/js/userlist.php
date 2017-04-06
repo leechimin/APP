@@ -1,12 +1,8 @@
 <?php
 	include 'connect.php';
 
-	//获取前端得到的数据
-     $username = isset($_POST['username']) ? $_POST['username'] : '';  
-     $password = isset($_POST['password ']) ? $_POST['password '] : '';  
-     echo $username;
 	// 查询数据
-	$sql = 'select * from user'; 
+	$sql = 'select * from goods'; 
 	//order by age desc limit '. ($page-1)*2 .',2';
 
 	//查询前设置编码，放置输出乱码

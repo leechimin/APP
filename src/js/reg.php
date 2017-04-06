@@ -15,7 +15,7 @@
         //判断用户名是否已存在
         if($username == $row['username']) {
             //用户名已存在，显示提示信息
-            header("Location:../reg.html?err=1该用户名已被注册");
+            echo "<script>alert('该用户名已被注册！');history.go(-1);</script>";
         } else {
 
             //用户名不存在，插入数据
@@ -23,7 +23,7 @@
             $sql_insert = "INSERT INTO user(username,password) VALUES('$username','$password')";
             //执行SQL语句
             mysqli_query($conn,$sql_insert);
-            header("Location:../reg.html?err=3注册成功");
+            echo "<script>alert('注册成功！');history.go(-1);</script>";
         }
 
         //关闭数据库

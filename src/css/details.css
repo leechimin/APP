@@ -1,0 +1,11 @@
+body {position:relative;}
+.good {width:1200px;height:540px;background:#fff;margin:0 auto;}
+ .pic {width:400px;height:400px;float:left;margin-left:100px;margin-top: 50px;margin-right:50px;}
+ .pic img {border:1px solid #ccc;}
+ .content {width:597px;height:496px;float:left;background:#fff;margin-top:50px}
+ .content h4 {height:48px;line-height:48px;font-size:20px;border-bottom:1px dashed #ccc}
+ .content .price {color:red;font-size:30px;border-bottom:1px dashed #ccc}
+ .content .price div {color:black;font-size:12px;padding-top:20px;padding-bottom:10px;}
+ .content .price span {color:black;font-size:12px;padding-right:50px;}
+ .buy {width:150px;height:50px;background:red;text-align:center;line-height:50px;color:#fff;cursor:pointer;}
+ .box {width:440px;height:200px;background:yellow;position:absolute;top:50%;left:50%;}
