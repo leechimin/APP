@@ -168,7 +168,7 @@ a {
   width: 180px;
   height: 540px;
   background: #382f6b;
-  display: block;
+  display: none;
 }
 
 .head .allgoods .content div {

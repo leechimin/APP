@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+    <div class='top'>
+        <div class='pic'>
+            <img src='img/logo.png'>
+        </div>
+        <div class='nav'>
+            <ul>
+                <li><a href='#'>寺库首页</a></li>
+                <li><a href='#'>收藏寺库</a></li>
+                <li><a href='#'>寺库APP</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login">
+        <div class='msg'>
+            <form id="loginform" action="js/login.php" method="post">
+                <table border="0">
+                    <tr>
+                        <td>用户名：</td>
+                        <td>
+                            <input type="text" id="name" name="username" required="required"
+                            value=''>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>密&nbsp;&nbsp;&nbsp;码：</td>
+                        <td><input type="password" id="password" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="checkbox" name="remember"><small>记住我
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="color:red;font-size:10px;">
+                        <!--提示信息-->
+                            <?php
+                                $err=isset($_GET["err"])?$_GET["err"]:"";
+                                switch($err) {
+                                    case 1:
+                                    echo "用户名或密码错误！";
+                                    break;
+                                    case 2:
+                                    echo "用户名或密码不能为空！";
+                                    break;
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" id="login" name="login" value="登录">
+                            <input type="reset" id="reset" name="reset" value="重置">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            还没有账号，快去<a href="register.php">注册</a>吧！
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

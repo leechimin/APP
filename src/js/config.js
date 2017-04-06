@@ -6,6 +6,7 @@ requirejs.config({
 	// 格式：别名:真实路径
 	paths:{
 		'jquery':'../assets/jquery-3.1.1',
+		'common':'../assets/common',
 		'gdszoom':'../assets/jquery.gdszoom/jquery.gdszoom'
 	},
 

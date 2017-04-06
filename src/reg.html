@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <!-- <script src="js/require.js" data-main="js/res.js"></script> -->
+</head>
+<body>
+    <div class='top'>
+        <div class='pic'>
+            <img src='img/logo.png'>
+        </div>
+        <div class='nav'>
+            <ul>
+                <li><a href='#'>寺库首页</a></li>
+                <li><a href='#'>收藏寺库</a></li>
+                <li><a href='#'>寺库APP</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="login">
+        <div class='msg'>
+            <!-- <form method="get" action="js/reg.php">  
+                <p class='name'></p>
+                <input id='username' type='text' placeholder="用户名">
+                <p class="psd"></p>
+                <input id='password' type='password' placeholder="密码">
+                <p class="psd_"></p>
+                <input id='password_' type='password' placeholder="确认密码">
+                <label>
+                    <input type="checkbox">贵宾邀请码
+                </label>
+                <button type="submit">注册</button>
+            </form> -->
+            <form action="js/reg.php" method="post">
+                <table border="0">
+                    <tr>
+                        <td>用户名：</td>
+                        <td><input type="text" id="id_name" name="username" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>密&nbsp;&nbsp;&nbsp;码：</td>
+                        <td><input type="password" id="password" name="password" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>重复密码：</td>
+                        <td><input type="password" id="re_password" name="re_password" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center" style="color:red;font-size:10px;">
+                        <!--提示信息-->
+                            <?php
+                                $err=isset($_GET["err"])?$_GET["err"]:"";
+                                switch($err) {
+                                    case 1:
+                                    echo "用户名已存在！";
+                                    break;
+                                    case 2:
+                                    echo "密码与重复密码不一致！";
+                                    break;
+                                    case 3:
+                                    echo "注册成功！";
+                                    break;
+                                }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" id="register" name="register" value="注册">
+                            <input type="reset" id="reset" name="reset" value="重置">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            如果已有账号，快去<a href="login.html">登录</a>吧！
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

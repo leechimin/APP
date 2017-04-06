@@ -1,0 +1,47 @@
+.type {
+  width: 100%;
+  height: 360px;
+  background: #999;
+}
+
+.type .title {
+  width: 1200px;
+  height: 62px;
+  margin: 0 auto;
+}
+
+.type .title a {
+  font-size: 12px;
+  line-height: 62px;
+}
+
+.type .box {
+  position: relative;
+  width: 1200px;
+  height: 234px;
+  background: #fff;
+  margin: 0 auto;
+}
+
+.type .box .paizi {
+  width: 1088px;
+  height: 233px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.type .box .paizi li {
+  width: 98px;
+  height: 98px;
+  float: left;
+  list-style: none;
+  border: 1px solid #ccc;
+}
+
+.goods {
+  width: 100%;
+  height: 1800px;
+  background: #ccc;
+}

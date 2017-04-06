@@ -1,5 +1,6 @@
 requirejs(['config'],function(){
     requirejs(['jquery','gdszoom'],function(){
+            
             var $carousel = $('.carousel');
             var $ul = $carousel.children('ul');
             var len = $ul.children().length;
