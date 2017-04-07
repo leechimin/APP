@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript">
+        window.onload=function(){
+            var login = document.getElementById("login");
+            login.onclick=function(){
+                var name = document.getElementById("name")
+                var date = new Date();  
+                date.setDate(date.getDate() +7); 
+                document.cookie = 'user='+name.value+';expires=' + date;
+            }
+            
+        }
+    </script>
 </head>
 <body>
     <div class='top'>

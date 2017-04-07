@@ -19,31 +19,18 @@
             //选中“记住我”
             if($remember=="on") {
                 //创建cookie
-                setcookie("wang", $username, time()+7*24*3600);
+                setcookie("user", $username, time()+7*24*3600);
             }
             setcookie('username',$username,time()+(60*60*24*30));
             //开启session
             session_start();
             //创建session
             $_SESSION['user']=$username;
-            // setcookie('username',$row['username'],time()+(60*60*24*30));
-            //写入日志
-            // $ip = $_SERVER['REMOTE_ADDR'];
-            // $date = date('Y-m-d H:m:s');
-
-            // $info = sprintf("当前访问用户：%s,IP地址：%s,时间：%s \n",$username, $ip, $date);
-            // $sql_logs = "INSERT INTO Logs(username,ip,date) VALUES('$username','$ip','$date')";
-
-            // //日志写入文件，如实现此功能，需要创建文件目录logs
-            // $f = fopen('./logs/'.date('Ymd').'.log','a+');
-
-            // fwrite($f,$info);
-            // fclose($f);
-
-            //跳转到loginsucc.php页面
+            setcookie('username',$row['username'],time()+(60*60*24*30));
             //
             echo "<script>alert('登录成功！')</script>"; 
             header("Location:../index.html");
+            setcookie("username","$username",time()+2*7*24*3600);
             //关闭数据库
             mysqli_close($conn);
         }else {

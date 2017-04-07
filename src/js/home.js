@@ -5,6 +5,28 @@ requirejs(['config'],function(){
             // ?>
             // var session = <?php echo $_SESSION['user']; ?>
             // console.log(session)
+            var c = document.cookie;
+            function getCookie(cookie_name){
+                var c = document.cookie;
+                var cookie_pos = c.indexOf(cookie_name);
+                if (cookie_pos != -1)
+                {
+                    cookie_pos += cookie_name.length + 1; 
+                    var cookie_end = c.indexOf(";", cookie_pos);            
+                    if (cookie_end == -1)
+                    {
+                        cookie_end = c.length;
+                    }
+              
+                    var value = unescape(c.substring(cookie_pos, cookie_end)); 
+                }
+                return value;
+            }
+            var _name = getCookie("user");
+            console.log(_name);
+            $('.name').css({'color':'red'})
+            $('.name').html(_name)
+
             var $carousel = $('.carousel');
             var $ul = $carousel.children('ul');
             var len = $ul.children().length;

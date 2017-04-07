@@ -1,9 +1,9 @@
 <?php
 	include 'connect.php';
-
+    $page = isset($_POST['pageNo']) ? $_POST['pageNo'] : 1;
 	// 查询数据
-	$sql = 'select * from goods'; 
-	//order by age desc limit '. ($page-1)*2 .',2';
+	$sql = 'select * from goods order by id limit '. ($page-1)*12 .',12';
+	//;
 
 	//查询前设置编码，放置输出乱码
 	$result = $conn->query('set names utf8');

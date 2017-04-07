@@ -8,4 +8,7 @@ body {position:relative;}
  .content .price div {color:black;font-size:12px;padding-top:20px;padding-bottom:10px;}
  .content .price span {color:black;font-size:12px;padding-right:50px;}
  .buy {width:150px;height:50px;background:red;text-align:center;line-height:50px;color:#fff;cursor:pointer;}
- .box {width:440px;height:200px;background:yellow;position:absolute;top:50%;left:50%;}
+ .box {width:440px;height:200px;background:#fff;position:absolute;top:50%;left:50%;text-align:center;border:1px solid red}
+ .box .box1 {width:160px;height:50px;position:absolute;top:120px;left:40px;background:red;text-align:center;line-height:50px;color:#fff;}
+ .box .box2 {width:160px;height:50px;position:absolute;top:120px;right:40px;background:red;text-align:center;line-height:50px;color:#fff;}
+ .box .span {float:right;display:block;} 

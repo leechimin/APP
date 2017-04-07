@@ -1,0 +1,10 @@
+*{margin:0;padding:0;}
+.top {width:100%;height:70px;background:#323232;}
+.top .logo {padding-left:150px;}
+.top .pic {float:right;padding-right:150px;}
+.list {width:100%;height:1200px;background:#ccc;}
+table {width:986px;margin:0 auto;border-collapse: collapse;
+    border-spacing: 0;}
+table th {height:48px;line-height:48px;}
+table tbody tr {background:#fdf0ef;border-bottom:1px dashed #ccc}
+table tbody td {text-align:center;padding:20px 0 15px}

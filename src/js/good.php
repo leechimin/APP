@@ -1,7 +1,7 @@
 <?php
     include 'connect.php';
-
-    $id = isset($_POST['uid']) ? $_POST['uid'] : '';
+    //默认id为1
+    $id = isset($_POST['uid']) ? $_POST['uid'] : 1;
     //echo $id;
     // 查询数据
     $sql = "select * from goods where id='$id' "; 
