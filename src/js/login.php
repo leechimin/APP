@@ -21,16 +21,15 @@
                 //创建cookie
                 setcookie("user", $username, time()+7*24*3600);
             }
-            setcookie('username',$username,time()+(60*60*24*30));
             //开启session
             session_start();
             //创建session
             $_SESSION['user']=$username;
-            setcookie('username',$row['username'],time()+(60*60*24*30));
+            // setcookie('username',$row['username'],time()+(60*60*24*30));
             //
             echo "<script>alert('登录成功！')</script>"; 
             header("Location:../index.html");
-            setcookie("username","$username",time()+2*7*24*3600);
+            //setcookie("username","$username",time()+2*7*24*3600);
             //关闭数据库
             mysqli_close($conn);
         }else {

@@ -127,7 +127,7 @@ requirejs(['config'],function(){
                     //把商品写进cookie，保存七天
                     var now = new Date();
                     now.setDate(now.getDate()+7);
-                    document.cookie='carlist='+JSON.stringify(carlist)+';expires'+now;
+                    document.cookie='carlist='+JSON.stringify(carlist)+';expires='+now;
                 })
 
             }
